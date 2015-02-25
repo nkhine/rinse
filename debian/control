@@ -7,6 +7,7 @@ Build-Depends: debhelper (>= 7)
 Homepage: http://collab-maint.alioth.debian.org/rinse/
 Vcs-Git: git://anonscm.debian.org/collab-maint/rinse.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/rinse.git
+
 Package: rinse
 Architecture: all
 Depends: wget, libterm-size-perl, libwww-perl, perl, rpm
