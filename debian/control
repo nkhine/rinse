@@ -9,7 +9,7 @@ Vcs-Git: git://anonscm.debian.org/collab-maint/rinse.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/rinse.git
 Package: rinse
 Architecture: all
-Depends: wget, libterm-size-perl, libwww-perl, perl-modules, rpm
+Depends: wget, libterm-size-perl, libwww-perl, perl, rpm
 Description: RPM installation environment
  This is a tool for bootstrapping a basic RPM-based distribution of
  GNU/Linux.
