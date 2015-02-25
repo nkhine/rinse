@@ -1,3 +1,10 @@
+rinse (3.0.7) unstable; urgency=high
+
+  * control: change depends on perl-modules to perl, Closes: #779118,
+    update Vcs-git
+
+  -- Thomas Lange <lange@debian.org>  Wed, 25 Feb 2015 11:47:20 +0100
+
 rinse (3.0.6) unstable; urgency=low
 
   * add missing symlink for ld
