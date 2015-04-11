@@ -1147,13 +1147,13 @@ sub unpackPackages {
       #  Run the unpacking command.
       #
       my $cmd =
-        "rpm2cpio $file | (cd $CONFIG{'directory'} ; cpio --extract --make-directories --no-absolute-filenames --preserve-modification-time) 2>/dev/null >/dev/null";
+        "rpm2cpio $file | (cd $CONFIG{'directory'} ; cpio --extract --extract-over-symlinks --make-directories --no-absolute-filenames --preserve-modification-time) 2>/dev/null >/dev/null";
       if ( $file =~ /(fedora|centos|redhat|mandriva)-release-/ ) {
         my $rpmname = basename($file);
         $postcmd =
           "cp $file $CONFIG{'directory'}/tmp ; chroot $CONFIG{'directory'} rpm -ivh --force --nodeps /tmp/$rpmname ; rm $CONFIG{'directory'}/tmp/$rpmname";
       }
-      system($cmd );
+      system($cmd) == 0 or die "failed to extract $name: $?";
 
     }
     print "\r";
