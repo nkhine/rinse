@@ -1,9 +1,18 @@
+rinse (3.0.8) unstable; urgency=high
+
+  * add --extract-over-symlinks to cpio call, Closes: #768501
+    this restores the old behaviour of cpio, which changed because of 
+    CVE-2015-1197 (see #774669)
+  * add check if cpio call failed
+
+-- Thomas Lange <lange@debian.org>  Mon, 13 Apr 2015 14:51:41 +0200
+
 rinse (3.0.7) unstable; urgency=high
 
   * control: change depends on perl-modules to perl, Closes: #779118,
     update Vcs-git
 
- -- Thomas Lange <lange@debian.org>  Wed, 25 Feb 2015 11:47:20 +0100
+ -- Thomas Lange <lange@debian.org>  Mon, 13 Apr 2015 15:20:39 +0200
 
 rinse (3.0.6) unstable; urgency=low
 
