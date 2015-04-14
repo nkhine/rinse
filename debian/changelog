@@ -1,3 +1,10 @@
+rinse (3.0.9) unstable; urgency=high
+
+  * add dependency on new cpio version
+  * fix date of 3.0.7 entry, Closes: #782518
+
+ -- Thomas Lange <lange@debian.org>  Tue, 14 Apr 2015 09:03:48 +0200
+
 rinse (3.0.8) unstable; urgency=high
 
   * add --extract-over-symlinks to cpio call, Closes: #768501
@@ -12,7 +19,7 @@ rinse (3.0.7) unstable; urgency=high
   * control: change depends on perl-modules to perl, Closes: #779118,
     update Vcs-git
 
- -- Thomas Lange <lange@debian.org>  Mon, 13 Apr 2015 15:20:39 +0200
+ -- Thomas Lange <lange@debian.org>  Wed, 25 Feb 2015 11:47:20 +0100
 
 rinse (3.0.6) unstable; urgency=low
 
