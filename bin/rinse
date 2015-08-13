@@ -1053,7 +1053,7 @@ sub downloadURL {
     #  Create the helper.
     #
     my $ua = LWP::UserAgent->new;
-    $ua->timeout(30);
+    $ua->timeout(180);
     $ua->env_proxy;
 
     #
