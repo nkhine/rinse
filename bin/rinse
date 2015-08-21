@@ -1151,7 +1151,7 @@ sub unpackPackages {
       if ( $file =~ /(fedora|centos|redhat|mandriva)-release-/ ) {
         my $rpmname = basename($file);
         $postcmd =
-          "cp $file $CONFIG{'directory'}/tmp ; chroot $CONFIG{'directory'} rpm -ivh --force --nodeps /tmp/$rpmname ; rm $CONFIG{'directory'}/tmp/$rpmname";
+          "mount -t proc proc $CONFIG{'directory'}/proc ;cp $file $CONFIG{'directory'}/tmp ; chroot $CONFIG{'directory'} rpm -ivh --force --nodeps /tmp/$rpmname ; rm $CONFIG{'directory'}/tmp/$rpmname; umount $CONFIG{'directory'}/proc";
       }
       system($cmd) == 0 or die "failed to extract $name: $?";
 
