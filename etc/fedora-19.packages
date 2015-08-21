@@ -88,3 +88,7 @@ tzdata
 xz-libs
 yum-metadata-parser
 zlib
+libestr
+libee
+liblognorm
+json-c
