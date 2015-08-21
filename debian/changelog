@@ -1,3 +1,12 @@
+rinse (3.1) unstable; urgency=low
+
+  * add support for fedora 20-22, Closes: #789421
+  * mount /proc; Closes: #777739
+  * increase timeout
+  * fix package list for fedora-1{8,9}
+
+ -- Thomas Lange <lange@debian.org>  Fri, 21 Aug 2015 17:41:51 +0200
+
 rinse (3.0.9) unstable; urgency=high
 
   * add dependency on new cpio version
