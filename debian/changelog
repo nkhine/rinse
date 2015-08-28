@@ -1,3 +1,11 @@
+rinse (3.1.1) unstable; urgency=low
+
+  * fedora-2*: add findutils, iputils
+  * fedora-22: add packages for dnf plugins
+  * fedora-22/post-install.sh: better DNF support
+
+ -- Thomas Lange <lange@debian.org>  Fri, 28 Aug 2015 15:30:29 +0200
+
 rinse (3.1) unstable; urgency=low
 
   * add support for fedora 20-22, Closes: #789421
