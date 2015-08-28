@@ -6,6 +6,7 @@ bzip2-libs
 ca-certificates
 chkconfig
 coreutils
+findutils
 cracklib
 cracklib-dicts
 curl
@@ -109,3 +110,8 @@ python-hawkey
 hawkey
 libsolv
 dnf-conf
+dnf-yum
+dnf-plugins-core
+python-dnf
+python-dnf-plugins-core
+python-dnf-plugins-extras-repomanage

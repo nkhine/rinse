@@ -6,6 +6,7 @@ bzip2-libs
 ca-certificates
 chkconfig
 coreutils
+findutils
 cracklib
 cracklib-dicts
 curl
