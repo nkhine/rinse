@@ -20,7 +20,7 @@ fi
 #  2.  Copy the cached .RPM files into the yum directory, so that
 #     yum doesn't need to download them again.
 #
-echo "  Setting up YUM XXXX cache"
+echo "  Setting up DNF cache"
 mkdir -p ${prefix}/var/cache/yum/core/packages/
 
 for i in ${prefix}/*.rpm ; do
@@ -31,7 +31,7 @@ cp -pu $cache_dir/$dist.$ARCH/* ${prefix}/var/cache/yum/core/packages/
 
 
 #
-#  3.  Ensure that Yum has a working configuration file.
+#  3.  Ensure that DNF has a working configuration file.
 #
 
 # use the mirror URL which was specified in rinse.conf
@@ -41,7 +41,7 @@ mirror=`dirname $mirror`
 # save original yum.conf
 mv ${prefix}/etc/yum.conf ${prefix}/etc/yum.conf.orig
 
-cat > ${prefix}/etc/yum.conf <<EOF
+cat > ${prefix}/etc/yum.repos.d/rinse.repo <<EOF
 [main]
 reposdir=/dev/null
 logfile=/var/log/yum.log
@@ -49,15 +49,18 @@ logfile=/var/log/yum.log
 [core]
 name=core
 baseurl=$mirror
+gpgcheck=0
+repo_gpgcheck=0
 EOF
 
-
 #
-#  4.  Run "yum install yum".
+#  4.  Install some package via DNF
 #
 
-echo "  Bootstrapping yum/dnf"
-chroot ${prefix} /usr/bin/dnf -y install yum vim-minimal dhclient
+echo "  Bootstrapping DNF"
+
+chroot ${prefix} /usr/bin/dnf -y install vim-minimal dhclient
+
 
 # restore original yum.conf
 mv ${prefix}/etc/yum.conf.orig ${prefix}/etc/yum.conf
@@ -66,13 +69,14 @@ mv ${prefix}/etc/yum.conf.orig ${prefix}/etc/yum.conf
 # If you get this error, then replace https with http in /etc/yum.repos.d/*
 # Error: Cannot retrieve metalink for repository: fedora/19/x86_64. Please verify its path and try again
 #
-# sed -i -e 's/https/https' ${prefix}/etc/yum.repos.d/*
+#sed -i -e 's/https:/http:/' ${prefix}/etc/yum.repos.d/*
 
 
 #
 #  5.  Clean up
 #
 chroot ${prefix} /usr/bin/dnf clean all
+rm ${prefix}/etc/yum.repos.d/rinse.repo
 
 umount ${prefix}/proc
 umount ${prefix}/sys
