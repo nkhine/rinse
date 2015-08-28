@@ -93,8 +93,6 @@ libestr
 json-c
 libmetalink
 libarchive
-dnf
-python-dnf
 libksba
 npth
 lzo
@@ -109,6 +107,8 @@ python-six
 python-hawkey
 hawkey
 libsolv
+iputils
+dnf
 dnf-conf
 dnf-yum
 dnf-plugins-core
