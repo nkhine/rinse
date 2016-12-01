@@ -1,3 +1,9 @@
+rinse (3.2) unstable; urgency=low
+
+  * add config for opensuse 42.2
+
+ -- Thomas Lange <lange@debian.org>  Thu, 01 Dec 2016 17:07:02 +0100
+
 rinse (3.1.1) unstable; urgency=low
 
   * fedora-2*: add findutils, iputils
