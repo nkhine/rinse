@@ -77,8 +77,7 @@ EOT
 chroot ${prefix} /usr/bin/zypper -n --gpg-auto-import-keys refresh --force-download
 
 # The base system
-chroot ${prefix} /usr/bin/zypper -n --no-gpg-checks install aaa_base module-init-tools    2>&1
-chroot ${prefix} /usr/bin/zypper -n --no-gpg-checks install zypper vim syslog-ng     2>&1
+chroot ${prefix} /usr/bin/zypper -n --no-gpg-checks install aaa_base vim syslog-ng 2>&1
 chroot ${prefix} /usr/bin/zypper -n --no-gpg-checks update              2>&1
 chroot ${prefix} /usr/bin/zypper clean
 
