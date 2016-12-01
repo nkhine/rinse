@@ -1,8 +1,9 @@
 rinse (3.2) unstable; urgency=low
 
   * add config for opensuse 42.2
+  * rinse.conf: fix URL, Closes: #803360
 
- -- Thomas Lange <lange@debian.org>  Thu, 01 Dec 2016 17:07:02 +0100
+ -- Thomas Lange <lange@debian.org>  Thu, 01 Dec 2016 21:16:27 +0100
 
 rinse (3.1.1) unstable; urgency=low
 
